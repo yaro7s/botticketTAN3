@@ -3,6 +3,8 @@ from discord.ext import commands
 from discord.ui import Button, View
 import asyncio
 from keep_alive import keep_alive
+import os
+
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='!', intents=intents)
@@ -62,4 +64,4 @@ async def on_interaction(interaction):
 keep_alive()
 
 # Remplace TON_TOKEN_ICI par ton token
-bot.run("TON_TOKEN_ICI")
+bot.run(os.environ['DISCORD_TOKEN'])
